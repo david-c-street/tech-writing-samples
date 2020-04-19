@@ -1,5 +1,7 @@
 ## Anatomy of a basic data science project
+
 **A technical copywriting exercise**
+
 *David C Street*
 
 Statistics educator Christoper Chatfield defined his field as "the science of making decisions in the face of uncertainty." Is data science any different? By Chatfield's definition, not at all.
