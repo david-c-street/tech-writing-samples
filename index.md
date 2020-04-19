@@ -1057,7 +1057,7 @@ This is a good start though. We could report our findings and then think about w
 
 ### What's next?
 
-What are ways we could improve this analysis? The first things that come to my mind are:
+What are some ways we could improve this analysis? The first things that come to my mind are:
 
 1. **Investigate the distinctions between categories.** Who decides what goes in what category? Google and Apple? The app makers? What are the common features of apps in each category? Looking at data with little to no context is usually a bad idea. I know I felt like the categories were unclear for me. More context might give us ideas for how to make a recommendation.
 2. **Come up with a a better recommendation metric.** This might be an ideal place for machine learning algorithms. These algorithms take in factors and return a kind of "line of best fit." That "line" would tell you what factors contribute more or less to a desired outcome. For example, we could see what combination of factors in the dataset most often led to a high number of reviews.
