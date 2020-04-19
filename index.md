@@ -6,7 +6,7 @@
 
 Statistics educator Christoper Chatfield defined his field as "the science of making decisions in the face of uncertainty." Is data science any different? By Chatfield's definition, not at all.
 
-At its core, data science involves using a computer to draw conclusions from large amounts of information. This fits perfectly what we now think of when we see the word *data*: computers and digitally stored information. The *science* part is the same as in Chatfield's definition, it means trying to making better informed decisions.
+At its core, data science involves using a computer to draw conclusions from large amounts of information. This fits perfectly what we now think of when we see the word *data* – computers and digitally stored information. The *science* part is the same as in Chatfield's definition. It means trying to make better informed decisions.
 
 Advanced forms of data science do require a lot of math, mostly statistics and probability. We'll briefly discuss possibilities for advanced methods later, but the analysis presented here uses nothing more than sums and averages.
 
@@ -14,7 +14,7 @@ I've included all the code and outputs. We won't dive into the code in detail, i
 
 Most data science work takes place in this kind of environment. There are programs that can simplify some tasks, showing data and results in a fancier graphical user interface. But data scientists spend much of their time with raw code and raw outputs, like what we'll see below. Many prefer it that way. 
 
-There are many ways to shorten and improve the code. Add-ons to Python, packages, could handle many of these tasks in a single line of code. However, those packages take extra time to learn and hide complex operations going on in the background. We'll stick to basic code that is easier to read and interpret.
+There are many ways to shorten and improve the code below. Add-ons to Python, packages, could handle many of these tasks in a single line of code. However, those packages take extra time to learn and hide complex operations going on in the background. We'll stick to basic code that is easier to read and interpret.
 
 ### The assignment: Make a profitable free app for Android and iOS
 
@@ -24,9 +24,9 @@ We assume that all revenue comes from ads. So we need to maximize the number of 
 
 1. High number of reviews = High engagement with apps of that kind. High engagement means more ad impressions and more revenue.
 
-2. Low average review score = Users are currently unsatisfied with the selection apps in the category. We have a better chance of standing out. There may not already be a recognized leader for the category.
+2. Low average review score = Users are currently unsatisfied with the selection of apps in the category. We have a better chance of standing out in such a category.
 
-We want to find a kind of app, across both the Google Play Store and the Apple App Store, that has a high number of reviews and also a low average review score.
+We want to find a kind of app, across both the Google Play Store and the Apple App Store, that gets a lot of reviews, but currently has a low average review score.
 
 ### Step 1: Get the data
 
@@ -35,9 +35,11 @@ This step can be complicated and time-consuming. In this case, someone has alrea
 - Play store data ([Kaggle](https://www.kaggle.com/lava18/google-play-store-apps))
 - Apple App Store data ([Kaggle](https://www.kaggle.com/ramamet4/app-store-apple-data-set-10k-apps))
 
-Without such data sets, we would have to write code to go to a database, mine the web or collect the data in some other way. For most projects, a significant amount of time has to be reserved t the beginning just for data collection and quality assurance. Reliable data is essential. As the saying goes, "Garbage in, garbage out." Without reliable data, even the best project is doomed from the start.
+Without such data sets, we would have to write code to go to a database, mine the web or collect the data in some other way. For most projects, a significant amount of time has to be reserved in the beginning just for data collection and quality assurance. Reliable data is essential. As one saying goes, "Garbage in, garbage out." Without reliable data, even the best project is doomed from the start.
 
-Luckily for beginners, there are a lot of prepared data sets available to play around with. The above datasets are from Kaggle, which is a good place to start.
+Luckily for beginners, there are a lot of free, ready-to-go datasets available to play around with. The above datasets are from Kaggle, which is a good place to look.
+
+Let's start by reading the data into Python and seeing what it looks like.
 
 **Import the data from file and convert it to a format that Python can work with**
 
@@ -150,17 +152,17 @@ App 1 | Photobook maker  | Art and design | ...
 App 2 | Instagram | Social media | ...
 ... | ... | ... | ...
 
-The columns are listed starting from zero, because that is how Python counts entries in a list. We'll use those column index numbers throughout this project to refer to a partcular piece of data. So even though Python represents the data in a slightly different way, we'll make functions to handle the data as if it were in a spreadsheet with rows and columns.
+The columns are listed starting from zero, because that's how Python counts entries in a list. We'll use those column index numbers throughout this project to refer to a particular piece of data. Even though Python represents the data in a slightly different way, we'll make functions to handle the data as if it were in a spreadsheet with rows and columns.
 
-We already see what data will be most useful: categories (prime_genre for the App Store), ratings and reviews. In the next step we'll take a closer look at what that data looks like.
+We already see what data will be most useful: categories (prime_genre for the App Store), ratings and reviews. In the next step, we'll take a closer look at what that data looks like.
 
 ### Step 2: Check and clean the data
 
 In a perfect world, data would be error-free and consistent. Most data is not, so we need to check and clean our data.
 
-As a warning, this is the longest part of the project. That's not uncommon either. In most data science projects, dealing with errors, outliers and data quality takes a lot of time. Some data scientist joke that data cleaner would be a more appropriate job title.
+As a warning, this is the longest part of the project. That's not uncommon. In most data science projects, dealing with data errors, outliers and quality takes a lot of time. Some data scientists joke that data cleaner would be a more appropriate job title.
 
-We'll start by breaking the data down by category to check for anything suspiscious.
+We'll start by breaking the data down by category to check for anything suspicious.
 
 **Write a function to count how many apps have a particular value in one column**
 
@@ -288,15 +290,15 @@ print(freq_table_play_genres)
     {'Parenting;Music & Video': 6, 'Communication;Creativity': 1, 'Food & Drink': 127, 'Music;Music & Video': 3, 'Lifestyle;Pretend Play': 1, 'Art & Design;Pretend Play': 2, 'Books & Reference;Creativity': 1, 'Board;Brain Games': 15, 'Business': 460, 'Adventure;Action & Adventure': 13, 'Photography': 335, 'Simulation;Action & Adventure': 11, 'Education;Music & Video': 5, 'Educational;Creativity': 5, 'Puzzle;Brain Games': 19, 'Parenting;Brain Games': 1, 'Casual;Brain Games': 13, 'Simulation': 200, 'Educational;Pretend Play': 19, 'Social': 295, 'Card;Action & Adventure': 2, 'Entertainment;Education': 1, 'Tools;Education': 1, 'Video Players & Editors;Music & Video': 3, 'Entertainment;Creativity': 3, 'Casual;Music & Video': 2, 'Personalization': 392, 'Board;Pretend Play': 1, 'Educational': 37, 'Arcade': 220, 'Entertainment': 623, 'Sports': 398, 'Entertainment;Pretend Play': 2, 'Lifestyle': 382, 'Trivia': 38, 'Shopping': 260, 'Parenting;Education': 7, 'Books & Reference;Education': 2, 'Racing;Action & Adventure': 20, 'Entertainment;Music & Video': 27, 'Strategy;Creativity': 1, 'Word': 29, 'Role Playing': 109, 'Comics': 59, 'News & Magazines': 283, 'Role Playing;Pretend Play': 5, 'Education': 549, 'Education;Pretend Play': 23, 'Health & Fitness;Education': 1, 'Finance': 366, 'House & Home': 88, 'Communication': 387, 'Video Players & Editors': 173, 'Action;Action & Adventure': 17, 'Productivity': 424, 'Arcade;Action & Adventure': 16, 'Art & Design;Action & Adventure': 2, 'Libraries & Demo': 85, 'Music': 22, 'Board': 44, 'Dating': 234, 'Racing': 98, 'Events': 64, 'Health & Fitness': 341, 'Education;Education': 50, 'Beauty': 53, 'Racing;Pretend Play': 1, 'Simulation;Education': 3, 'Role Playing;Brain Games': 1, 'Puzzle;Education': 1, 'Auto & Vehicles': 85, 'Maps & Navigation': 137, 'Education;Creativity': 7, 'Education;Action & Adventure': 6, 'Travel & Local;Action & Adventure': 1, 'Strategy;Action & Adventure': 2, 'Card': 48, 'Travel & Local': 257, 'Educational;Action & Adventure': 4, 'Casino': 39, 'Sports;Action & Adventure': 4, 'Puzzle;Action & Adventure': 5, 'Action': 365, 'Strategy': 107, 'Entertainment;Action & Adventure': 3, 'Puzzle': 140, 'Art & Design;Creativity': 7, 'Casual;Action & Adventure': 21, 'Casual;Education': 3, 'Puzzle;Creativity': 2, 'Role Playing;Education': 1, 'Adventure;Education': 2, 'Video Players & Editors;Creativity': 2, 'Comics;Creativity': 1, 'Educational;Education': 41, 'Adventure;Brain Games': 1, 'Casual;Pretend Play': 31, 'Health & Fitness;Action & Adventure': 1, 'Strategy;Education': 1, 'Board;Action & Adventure': 3, 'Art & Design': 58, 'Role Playing;Action & Adventure': 7, 'Trivia;Education': 1, 'Parenting': 46, 'Adventure': 75, 'Educational;Brain Games': 6, 'Music & Audio;Music & Video': 1, 'Simulation;Pretend Play': 4, 'Medical': 463, 'Education;Brain Games': 5, 'Card;Brain Games': 1, 'Casual;Creativity': 7, 'Arcade;Pretend Play': 1, 'Entertainment;Brain Games': 8, 'Weather': 82, 'Lifestyle;Education': 1, 'Tools': 842, 'Casual': 193, 'Books & Reference': 231}
 
 
-What a mess. If we look at each entry, we see that they are sub-categories. This could be helpful, but we also lack something similar for the Apple Store data. It would be hard to compare between the two datasets, which we have to do in the end.
+What a mess. If we look at each entry, we see that they are subcategories. This could be helpful, but we also lack something similar for the Apple Store data. It would be hard to compare between the two datasets, which we have to do in the end.
 
-We would also have to clean up the data in this column. Each entry is often several entries joined together by semicolons. Take "Travel & Local;Action & Adventure" for example.
+We would also have to clean up this column. Each entry is often several entries joined together by semicolons. Take "Travel & Local;Action & Adventure" for example.
 
-We won't consider this column for now. We know it's there if we decide later we want to explore more details in just the Play Store.
+We won't consider this column for now. We know it's there if we decide later we want to explore more details in the Play Store.
 
 We still need to check the data in a couple more columns. The ratings and number of reviews data will both be useful.
 
-The way we imported the data means that the raw data will be in "string" form. This means that Python treats all the data like words, even if there are numbers there. We'll need to convert these columns to numbers to do sums and averages later. Let's check to see if that will work how we expect it to.
+The way we imported the data means that the raw data will be in "string" form. This means that Python treats all the data like words, even if there are numbers. We'll need to convert these columns to numbers to do sums and averages later. Let's check to see if that will work how we expect it to.
 
 **Write a function to check if numerical columns can be converted properly**
 
@@ -483,7 +485,7 @@ print(play_store_list[295])
     ['Slack', 'BUSINESS', '4.4', '51510', 'Varies with device', '5,000,000+', 'Free', '0', 'Everyone', 'Business', 'August 2, 2018', 'Varies with device', 'Varies with device']
 
 
-Two entries are identical and one has a few more reviews. The repeat data is likely taken at different times. Let's keep only the most recent entry, which means the entry with the most reviews.
+Two entries are identical and one has a few more reviews. The repeat entries were likely collected at different times. Let's keep only the most recent entry, which means the entry with the most reviews.
 
 **Write a function to keep the one duplicate entry with the most reviews**
 
@@ -535,7 +537,7 @@ As a final step, let's filter down to only free, English-language apps.
 
 We'll use a simple function to check for a large proportion of ASCII characters with codes higher than 127. Codes up to 127 include the basic English letters, numbers and punctuation. It won't be perfect, but it should catch most of the apps in a language other than English.
 
-**Write a function to check for non-English app names**
+**Write a function to check for possible non-English app names**
 
 
 ```python
@@ -565,7 +567,7 @@ for row in app_store_list[1:]:
         app_store_list_en_free.append(row)
 ```
 
-**Check for the final number of apps we have left to analyze after cleaning and filtering**
+**Check the number of apps we have left in each dataset**
 
 *Play Store*
 
@@ -589,9 +591,9 @@ print(len(app_store_list_en_free))
 
 ### Step 3: Inspect the data
 
-Next let's take a closer look at the distribution of the data we have. We already know we want to use ratings and number of reviews as main criteria, but maybe something else will jump out at us.
+Next, let's take a closer look at the distribution of the data we have left. We already know we want to use ratings and number of reviews as decision criteria, but maybe something else will jump out at us.
 
-**Write a function to nicely sort and print category data as a percentage of total**
+**Write a function to sort and summarize category data**
 
 
 ```python
@@ -685,9 +687,9 @@ display_table_ll(app_store_list_en_free,12)
     Business: 0.0%
 
 
-The App Store has a ton of free games in it. If games shows up as a possibility later, we'll keep that in mind. Nothing else is too surprising, so let's keep looking through the data.
+The App Store has a ton of free games in it. If games shows up as a possibility later, we'll keep that in mind. There are very few apps in some categories, but we weren't told to take that into account. Nothing else looks too surprising, so let's keep looking through the data.
 
-Two indicators that we have for both app stores are the number of user reviews and the average rating for each app. Let's see averages of each factor by category.
+Let's see averages for rating and number of reviews by category.
 
 **Write a function to display a column average by category**
 
@@ -881,7 +883,7 @@ The data looks useful, but it's still too much to digest. We'll go back to our i
 
 2. Low average review score = Users are currently unsatisfied with the selection apps in the category
 
-Let's create a simple scoring system for each of these criteria. We'll rank the categories for each and give them points based on place their in.
+Let's create a simple scoring system for each of these criteria. We'll rank the categories based on each and give them points based on place their in the ranking.
 
 **Write two functions, one to rank and one to score the categories**
 
@@ -1051,16 +1053,18 @@ That gives us the following possibilities:
 
 Get the engineers working on it!
 
-We'd need to do a deeper competitive analysis before actually starting such an app. But this narrows the choice, which is the best we can ask from a dataset with few details.
+We'd need to do a deeper competitive analysis before actually starting such an app. But this narrows the field for further research, which is the best we can expect from a dataset with so few details.
 
-This is a good start though. We could report our findings and then think about what we could improve for a future version of the analysis.
+This is a good start, though. We could report our findings and then think about what we could improve for a future version of the analysis.
 
 ### What's next?
 
 What are some ways we could improve this analysis? The first things that come to my mind are:
 
-1. **Investigate the distinctions between categories.** Who decides what goes in what category? Google and Apple? The app makers? What are the common features of apps in each category? Looking at data with little to no context is usually a bad idea. I know I felt like the categories were unclear for me. More context might give us ideas for how to make a recommendation.
-2. **Come up with a a better recommendation metric.** This might be an ideal place for machine learning algorithms. These algorithms take in factors and return a kind of "line of best fit." That "line" would tell you what factors contribute more or less to a desired outcome. For example, we could see what combination of factors in the dataset most often led to a high number of reviews.
-3. **Add more details about each app.** The app descriptions would be a rich source of information, if we could figure out how to parse through all that text. As a simple start, we could see what words (besides common words like "the") are repeated most for each app and for each category. This could quickly give us an idea of the main features, proposed benefits and selling points.
+- **Investigate the distinctions between categories.** Who decides what goes in what category? Google and Apple? The app makers? What are the common features of apps in each category? Looking at data with little to no context is usually a bad idea. I know I felt like the categories were unclear for me. More context might give us ideas for how to make a recommendation.
+- **Come up with a a better recommendation metric.** This might be an ideal place for machine learning algorithms. These algorithms take in factors and return a kind of "line of best fit." That "line" would tell you what factors contribute more or less to a desired outcome. For example, we could see what combination of factors in the dataset most often led to a high number of reviews.
+- **Add more details about each app.** The app descriptions would be a rich source of information. As a simple starting point, we could see what words (besides common words like "the") are repeated most for each app and category. This could give us an idea of the main features, proposed benefits and selling points for each app and category.
+
+We'd have to check in and see what the expectations for the analysis are. Often, those expectations will be clearly spelled out from the start, but sometimes they aren't. As we've done here, we may just have to start with the basics, see what we find and ask for feedback as we gradually improve the quality of our analysis.
 
 *Note: I got the idea for this article from the [Dataquest](https://www.dataquest.io/) course materials. A version of this was the subject of one of their guided projects. I changed a few details and adapted my version of the project to form the basis of this article.*
