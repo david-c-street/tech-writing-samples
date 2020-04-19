@@ -362,7 +362,7 @@ count_nan_ll(app_store_list,8)
 
 
 
-It looks the rating column in the Play Store has over a thousand NaN (not a number) entries. Let's take a closer look.
+It looks like the rating column in the Play Store has over a thousand NaN (not a number) entries. Let's take a closer look.
 
 **Show the values for a few rows with "NaN" ratings**
 
@@ -383,9 +383,9 @@ print(play_store_list[nan_rows[1000]])
     ['DN Driver', 'FAMILY', 'NaN', '0', '7.5M', '5+', 'Free', '0', 'Everyone', 'Education', 'June 9, 2018', '1.0.2', '4.1 and up']
 
 
-It looks like these apps just have a low number of reviews. For low numbers of reviews, an average rating isn't displayed in the Play Store. We'll keep this in mind later and just ignore these apps when calculating average ratings.
+These apps have a low number of reviews. For low numbers of reviews, an average rating isn't displayed in the Play Store. We'll keep this in mind later and just ignore these apps when calculating average ratings.
 
-Next let's check to see if any of the entries are for the same app. For the Play Store, we'll just use the app names to check for duplicates. For the App Store, we can do a little better and use a unique ID number.
+Next let's check to see if any of the entries are for the same app. For the Play Store, we'll use the app names to check for duplicates. For the App Store, we can do a little better and use a unique ID number.
 
 **Write a function to check for duplicate entries**
 
