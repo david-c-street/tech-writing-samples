@@ -328,11 +328,6 @@ count_nan_ll(play_store_list,2)
 ```
 
     ['NaN', 'NaN', 'NaN', 'NaN', 'NaN']
-
-
-
-
-
     1474
 
 
@@ -343,11 +338,6 @@ count_nan_ll(play_store_list,3)
 ```
 
     []
-
-
-
-
-
     0
 
 
@@ -358,11 +348,6 @@ count_nan_ll(app_store_list,6)
 ```
 
     []
-
-
-
-
-
     0
 
 
@@ -373,11 +358,6 @@ count_nan_ll(app_store_list,8)
 ```
 
     []
-
-
-
-
-
     0
 
 
