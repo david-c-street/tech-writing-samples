@@ -1067,4 +1067,4 @@ What are some ways we could improve this analysis? The first things that come to
 
 We'd have to check in and see what the expectations for the analysis are. Often, those expectations will be clearly spelled out from the start, but sometimes they aren't. As we've done here, we may just have to start with the basics, see what we find and ask for feedback as we gradually improve the quality of our analysis.
 
-*Note: I got the idea for this article from the [Dataquest](https://www.dataquest.io/) course materials. A version of this was the subject of one of their guided projects. I changed a few details and adapted my version of the project to form the basis of this article.*
+*Note: I got the idea for this article from the [Dataquest](https://www.dataquest.io/) course materials. A version of this analysis was the subject of one of Dataquest's guided projects. I changed a few details and adapted my version of the project to form the basis of this article.*
