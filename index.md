@@ -13,7 +13,7 @@ Most data science work takes place in this kind of environment. There are progra
 
 There are many ways to shorten and improve the code. Add-ons to Python, packages, could handle many of these tasks in a single line of code. However, those packages take extra time to learn and hide complex operations going on in the background. We'll stick to basic code that is easier to read and interpret.
 
-### The assignment: Make a profitable free app for Android and iPhone
+### The assignment: Make a profitable free app for Android and iOS
 
 We're looking for an idea to make a free mobile phone application. The app will be available in English for Google Android and Apple iOS.
 
