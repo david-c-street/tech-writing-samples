@@ -1,6 +1,6 @@
-## Anatomy of a basic data science project
+**A technical copywriting exercise** – *Intended for an audience of programming beginners who are interested in data science as a hobby or as a possible profession*
 
-**A technical copywriting exercise** – Intended for an audience of programming beginners who are interested in data science as a hobby or as a possible profession
+## Anatomy of a basic data science project
 
 *David C Street*
 
