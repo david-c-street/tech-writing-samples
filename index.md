@@ -6,7 +6,7 @@
 
 Statistics educator Christoper Chatfield defined his field as "the science of making decisions in the face of uncertainty." Is data science any different? By Chatfield's definition, not at all.
 
-At its core, data science involves using a computer to draw conclusions from large amounts of information. This fits perfectly what we now think of when we see the word *data* – computers and digitally stored information. The *science* part is the same as in Chatfield's definition. It means trying to make better informed decisions.
+At its core, data science involves using a computer to draw conclusions from large amounts of information. This fits perfectly what we now think of when we see the word *data* – computers and digitally stored information. The *science* part is the same as in Chatfield's definition. It means trying to make better and more informed decisions.
 
 Advanced forms of data science do require a lot of math, mostly statistics and probability. We'll briefly discuss possibilities for advanced methods later, but the analysis presented here uses nothing more than sums and averages.
 
